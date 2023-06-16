@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -30,13 +31,13 @@ func main() {
 	fmt.Println("char:", char)
 
 	//Fromatting
-	mock := 123
+	var mock rune = '😊'
 
 	//string & new line
-	fmt.Println("")
+	fmt.Println("mock: ", mock)
 
 	//format string
-	fmt.Printf("mock: %d", mock)
+	fmt.Printf("mock: %c \n", mock)
 
 	// %s ใช้สำหรับแทนที่ string
 	// %d ใช้สำหรับแทนที่ integer
@@ -49,4 +50,31 @@ func main() {
 	// \n new line
 	// %T find type
 
+	//Zero value
+
+	//nil = null
+	var num int
+	var digi float32
+	var status bool
+	var word string
+	var emo rune
+
+	fmt.Printf("boo: %t \n", status)  //false
+	fmt.Printf("int: %d \n", num)     //0
+	fmt.Printf("float: %f \n", digi)  //0.00000
+	fmt.Printf("string: %s \n", word) //""
+	fmt.Printf("char: %c \n", emo)    //0
+
+	//if else
+	num = 34
+	if num == 34 && (num > 36 || num < 39) {
+		fmt.Printf("Yes: %d \n", num)
+	}
+	//short if
+	w := 25.0
+	if v := math.Pow(5, 2); v == w {
+		fmt.Println("result is ture")
+	} else {
+		fmt.Println("error")
+	}
 }
