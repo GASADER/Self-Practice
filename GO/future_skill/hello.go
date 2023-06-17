@@ -72,9 +72,38 @@ func main() {
 	}
 	//short if
 	w := 25.0
+	//variable must has in scoop of if
 	if v := math.Pow(5, 2); v == w {
 		fmt.Println("result is ture")
 	} else {
 		fmt.Println("error")
 	}
+
+	//switch
+	switch today := "Sunday"; today {
+	case "Saturday":
+		fmt.Println("today is Saturday")
+	case "Sunday", "Tuesday":
+		fmt.Println("today is Weekend")
+		fallthrough
+	case "Monday":
+		fmt.Println("today is Monday")
+	}
+
+	//switch statement without an expression
+	switchTest := 50
+	switch {
+	case switchTest < 0:
+		fmt.Println("negative")
+	case switchTest == 0:
+		fmt.Println("zaro")
+	case switchTest > 0:
+		fmt.Println("positive")
+	}
+	// function
+	add()
+}
+
+func add() {
+	fmt.Println("test")
 }
