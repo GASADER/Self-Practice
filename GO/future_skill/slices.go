@@ -23,7 +23,7 @@ func main() {
 	skills = append(skills, "ruby")
 	fmt.Printf("length: %d -value: %#v \n", len(skills), skills)
 
-	//get variable & add mutivalue
+	//get variable & add multivalue
 	ss := append(skills, "kotlin", "dart")
 	fmt.Printf("length: %d -value: %#v \n", len(ss), ss)
 
