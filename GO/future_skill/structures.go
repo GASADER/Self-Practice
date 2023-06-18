@@ -8,6 +8,17 @@ type course struct {
 	price      float64
 }
 
+//receiver
+func (this course) discount(n float64) float64 {
+	p := this.price - n
+	return p
+}
+func (this course) info() {
+	fmt.Println("name", this.name)
+	fmt.Println("instructor", this.instructor)
+	fmt.Println("price", this.price)
+}
+
 func main() {
 	c1 := course{
 		name:       "Basic Go",
@@ -29,4 +40,14 @@ func main() {
 	fmt.Println("price:", c2.price)
 
 	fmt.Println("c3:", c3)
+
+	d1 := c1.discount(20)
+	d2 := c2.discount(20)
+	d3 := c3.discount(20)
+	fmt.Printf("discount: %v \n", d1)
+	fmt.Printf("discount: %v \n", d2)
+	fmt.Printf("discount: %v \n", d3)
+	c1.info()
+	c2.info()
+	c3.info()
 }
