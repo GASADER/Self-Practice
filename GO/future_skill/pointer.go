@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-func changePrice(price int) {
-	price = price - 599
-	fmt.Println("change", price, &price)
-}
-
 //Dereference
 func changePricePointer(p *int) {
 	*p = *p - 599
 	fmt.Println("change", p, &p)
+}
+
+func changePrice(price int) {
+	price = price - 599
+	fmt.Println("change", price, &price)
 }
 
 func main() {
@@ -33,5 +33,9 @@ func main() {
 
 	//get value form variable to parameter
 	changePricePointer(&price)
+	fmt.Println(price, addr)
+
 	changePrice(price)
+	fmt.Println(price, addr)
+
 }
