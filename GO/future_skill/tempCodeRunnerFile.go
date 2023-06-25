@@ -1,22 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
-type promotion interface {
-	discount() int
-}
-
-func sale(val promotion) {
-	fmt.Println("sale:", val)
-}
-
-type course struct{}
-
-func (c course) discount() int {
-	return 99
+type Coures struct {
+	Name       string
+	Level      string
+	Views      int
+	Instructor string
+	FullPrice  int
 }
 
 func main() {
-	v := course{}
-	sale(v)
+	c := Coures{
+		Name:       "Basic go",
+		Level:      "Basic",
+		Views:      7562,
+		Instructor: "A",
+		FullPrice:  888,
+	}
+
+	b, err := json.Marshal(c)
+	fmt.Printf("type: %T \n", b)
+	fmt.Printf("byte: %v \n", b)
+	fmt.Printf("string: %s \n", b)
+	fmt.Println(err)
 }
